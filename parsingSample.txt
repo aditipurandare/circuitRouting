@@ -1,0 +1,178 @@
+(pcb "C:\Northeastern\Semester 2\Kicad project\parsingSample\parsingSample.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "(5.1.5)-3")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  150115 -101092  133505 -101092  133505 -90192.5  150115 -90192.5
+            150115 -101092)
+    )
+    (via "Via[0-1]_800:400_um")
+    (rule
+      (width 250)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical
+      (place R1 134580 -98280 front 0 (PN R))
+    )
+    (component LED_THT:LED_D1.8mm_W1.8mm_H2.4mm_Horizontal_O1.27mm_Z1.6mm
+      (place D1 146340 -92920 front 0 (PN LED))
+    )
+    (component "Battery:Battery_Panasonic_CR1025-VSK_Vertical_CircularHoles"
+      (place BT1 137160 -95250 front 0 (PN Battery))
+    )
+  )
+  (library
+    (image Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical
+      (outline (path signal 50  2860 1050  -1050 1050))
+      (outline (path signal 50  2860 -1050  2860 1050))
+      (outline (path signal 50  -1050 -1050  2860 -1050))
+      (outline (path signal 50  -1050 1050  -1050 -1050))
+      (outline (path signal 100  0 0  1900 0))
+      (outline (path signal 100  800 0  720.775 -347.107  498.792 -625.465  178.017 -779.942
+            -178.017 -779.942  -498.792 -625.465  -720.775 -347.107  -800 0
+            -720.775 347.107  -498.792 625.465  -178.017 779.942  178.017 779.942
+            498.792 625.465  720.775 347.107  800 0))
+      (pin Oval[A]Pad_1400x1400_um 2 1900 0)
+      (pin Round[A]Pad_1400_um 1 0 0)
+    )
+    (image LED_THT:LED_D1.8mm_W1.8mm_H2.4mm_Horizontal_O1.27mm_Z1.6mm
+      (outline (path signal 50  3750 1250  -1250 1250))
+      (outline (path signal 50  3750 -4600  3750 1250))
+      (outline (path signal 50  -1250 -4600  3750 -4600))
+      (outline (path signal 50  -1250 1250  -1250 -4600))
+      (outline (path signal 120  2540 -1080  2540 -1080))
+      (outline (path signal 120  2540 -1210  2540 -1080))
+      (outline (path signal 120  2540 -1210  2540 -1210))
+      (outline (path signal 120  2540 -1080  2540 -1210))
+      (outline (path signal 120  0 -1080  0 -1080))
+      (outline (path signal 120  0 -1210  0 -1080))
+      (outline (path signal 120  0 -1210  0 -1210))
+      (outline (path signal 120  0 -1080  0 -1210))
+      (outline (path signal 120  2230 -2930  310 -2930))
+      (outline (path signal 120  2230 -4330  2230 -2930))
+      (outline (path signal 120  310 -4330  2230 -4330))
+      (outline (path signal 120  310 -2930  310 -4330))
+      (outline (path signal 120  -200 -1210  -200 -2930))
+      (outline (path signal 120  -320 -1210  -320 -2930))
+      (outline (path signal 120  2980 -1210  -440 -1210))
+      (outline (path signal 120  2980 -2930  2980 -1210))
+      (outline (path signal 120  -440 -2930  2980 -2930))
+      (outline (path signal 120  -440 -1210  -440 -2930))
+      (outline (path signal 100  2540 0  2540 0))
+      (outline (path signal 100  2540 -1270  2540 0))
+      (outline (path signal 100  2540 -1270  2540 -1270))
+      (outline (path signal 100  2540 0  2540 -1270))
+      (outline (path signal 100  0 0  0 0))
+      (outline (path signal 100  0 -1270  0 0))
+      (outline (path signal 100  0 -1270  0 -1270))
+      (outline (path signal 100  0 0  0 -1270))
+      (outline (path signal 100  2170 -2870  370 -2870))
+      (outline (path signal 100  2170 -4270  2170 -2870))
+      (outline (path signal 100  370 -4270  2170 -4270))
+      (outline (path signal 100  370 -2870  370 -4270))
+      (outline (path signal 100  2920 -1270  -380 -1270))
+      (outline (path signal 100  2920 -2870  2920 -1270))
+      (outline (path signal 100  -380 -2870  2920 -2870))
+      (outline (path signal 100  -380 -1270  -380 -2870))
+      (pin Round[A]Pad_1800_um 2 2540 0)
+      (pin Rect[A]Pad_1800x1800_um 1 0 0)
+    )
+    (image "Battery:Battery_Panasonic_CR1025-VSK_Vertical_CircularHoles"
+      (outline (path signal 100  -3375 -100  6625 -100))
+      (outline (path signal 100  -3375 2750  6625 2750))
+      (outline (path signal 100  -3375 2750  -3375 -100))
+      (outline (path signal 100  6625 2750  6625 -100))
+      (outline (path signal 50  -3630 3580  -3630 -930))
+      (outline (path signal 50  6880 3580  6880 -930))
+      (outline (path signal 50  -3630 -930  6880 -930))
+      (outline (path signal 50  -3630 3580  6880 3580))
+      (outline (path signal 120  -3485 -210  -1060 -210))
+      (outline (path signal 120  1060 -210  6735 -210))
+      (outline (path signal 120  6735 -210  6735 2860))
+      (outline (path signal 120  -3485 -210  -3485 2860))
+      (outline (path signal 120  -3485 2860  2190 2860))
+      (outline (path signal 120  4310 2860  6735 2860))
+      (pin Rect[A]Pad_1600x1600_um 1 0 0)
+      (pin Round[A]Pad_1600_um 2 3250 2650)
+    )
+    (padstack Round[A]Pad_1400_um
+      (shape (circle F.Cu 1400))
+      (shape (circle B.Cu 1400))
+      (attach off)
+    )
+    (padstack Round[A]Pad_1600_um
+      (shape (circle F.Cu 1600))
+      (shape (circle B.Cu 1600))
+      (attach off)
+    )
+    (padstack Round[A]Pad_1800_um
+      (shape (circle F.Cu 1800))
+      (shape (circle B.Cu 1800))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1400x1400_um
+      (shape (path F.Cu 1400  0 0  0 0))
+      (shape (path B.Cu 1400  0 0  0 0))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1600x1600_um
+      (shape (rect F.Cu -800 -800 800 800))
+      (shape (rect B.Cu -800 -800 800 800))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1800x1800_um
+      (shape (rect F.Cu -900 -900 900 900))
+      (shape (rect B.Cu -900 -900 900 900))
+      (attach off)
+    )
+    (padstack "Via[0-1]_800:400_um"
+      (shape (circle F.Cu 800))
+      (shape (circle B.Cu 800))
+      (attach off)
+    )
+  )
+  (network
+    (net "Net-(BT1-Pad1)"
+      (pins R1-2 BT1-1)
+    )
+    (net "Net-(BT1-Pad2)"
+      (pins D1-1 BT1-2)
+    )
+    (net "Net-(D1-Pad2)"
+      (pins R1-1 D1-2)
+    )
+    (class kicad_default "" "Net-(BT1-Pad1)" "Net-(BT1-Pad2)" "Net-(D1-Pad2)"
+      (circuit
+        (use_via Via[0-1]_800:400_um)
+      )
+      (rule
+        (width 250)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+  )
+)
