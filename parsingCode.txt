@@ -3,8 +3,8 @@ def out(mat1):
             print(mat1[a])
 import os
 import numpy as np
-base_path = "C:\\Northeastern\\Semester 2\\Kicad project\\parsing"
-filename = "parsingSample.txt"
+base_path = ""
+filename = ""
 path_to_file = os.path.join(base_path, filename)
 fd = open(path_to_file , 'r')
 lines =[]
