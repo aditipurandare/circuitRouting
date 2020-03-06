@@ -39,7 +39,6 @@ for x in pins:
     mat.append(temp)
     mat[0].append(x)
 size = len(pins)+1
-tempNum=[[]]
 for a in range (1,size):
     for b in range(1,size):
         mat[a].append(0)
