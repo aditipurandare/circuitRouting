@@ -67,8 +67,47 @@ def is_valid_file(parser, arg):
     else:
         return open(arg, 'r')  # return an open file handle
 
+
+
+def get_components_pos_from_file(filename):
+    """
+    Expects the path to a dsn file.
+    returns a list of lists containing componets positions
+    """
+    base_path = ""
+    path_to_file = os.path.join(base_path, filename)
+    fd = open(path_to_file, 'r')
+
+    lines = []
+    l = [] 
+    locations = [[]]
+
+    for line in fd:
+        lines.append(line)
+    for x in lines:
+        if '(place' in x:
+            temp = x
+            ne =0
+            temp= temp[temp.find("place"):]
+            temp= temp[temp.find(" "):]
+            for t in range(0,3):
+                temp= temp[temp.find(" ")+1:]
+                ne = temp.find(" ")+1
+                l.append(temp[:ne])
+    for t in range(0,3):
+        del l[0]
+    for p in range(0,int(len(l)/3)-1):
+            locations.append([])
+    for p in range(0,int(len(l)/3)):
+        for q in range(0,3):
+            locations[p].append(l[q])
+        for r in range(0,3):
+            del(l[0])
+    return locations
+
 def main():
 
+    # Parse arguments
     parser = ArgumentParser(description="Parses DSN files")
     parser.add_argument("-i", dest="filename", required=True,
                         help="input dsn file", metavar="FILE",
@@ -77,10 +116,12 @@ def main():
 
     args = parser.parse_args()
 
-    print (args.filename)
-    mat = get_adjacency_from_file(args.filename)
-
-    print_matrix(mat)
+    # Process matrices
+    adj_mat = get_adjacency_from_file(args.filename)
+    print_matrix(adj_mat)
+    
+    pos_mat = get_components_pos_from_file(args.filename)
+    print(pos_mat)
 
 if __name__ == "__main__":
     main()
