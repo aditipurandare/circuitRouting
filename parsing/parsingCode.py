@@ -9,6 +9,10 @@ def print_matrix(mat1):
 
 
 def get_adjacency_from_file(filename):
+    """
+    Expects the path to a dsn file.
+    returns a list of lists containing the adjacency matrix
+    """
     base_path = ""
     path_to_file = os.path.join(base_path, filename)
     fd = open(path_to_file, 'r')
