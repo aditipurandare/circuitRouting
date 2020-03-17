@@ -1,0 +1,7 @@
+#pytest
+#pycodestyle
+tensorflow
+scipy
+jupyter
+matplotlib
+seaborn
