@@ -118,6 +118,19 @@ def get_area(filename):
         lines.append(line)
     string =""
     n=0
+    for line in fd:
+        lines.append(line)
+    outlines = []
+    xVals = []
+    yVals = []
+    for x in range(0,len(lines)-1):
+        if not "signal 50" in lines[x+1] and "signal 50" in lines[x]:
+            outlines.append([])
+            xVals.append([])
+            yVals.append([])
+    print(len(outlines))
+    string =""
+    n=0
     for x in range(0,len(lines)-1):
         if "outline" in lines[x]:
             lines[x]=lines[x][28:]
@@ -167,7 +180,7 @@ def get_area(filename):
         width.append(maxValx-minValx)
         area.append(length[lenNum]*width[lenNum])
         lenNum+=1
-    return area
+    return(area)
     
 def main():
 
