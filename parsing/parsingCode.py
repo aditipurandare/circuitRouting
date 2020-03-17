@@ -105,6 +105,64 @@ def get_components_pos_from_file(filename):
             del(l[0])
     return locations
 
+
+def get_area(filename):
+    base_path = ""
+    path_to_file = os.path.join(base_path, filename)
+    fd = open(path_to_file, 'r')
+    string =""
+    n=0
+    for x in range(0,len(lines)-1):
+        if "outline" in lines[x]:
+            lines[x]=lines[x][28:]
+            if not "outline" in lines[x+1]:
+                lines[x+1]=lines[x+1][28:]   
+        if lines[x][0]=="5":
+            lines[x]=lines[x][4:]
+            l1 = lines[x].find(" ")
+            xVals[n].append(lines[x][:l1])
+            lines[x]=lines[x][l1+1:]
+            l1 = lines[x].find(" ")
+            yVals[n].append(lines[x][:l1])
+            lines[x]=lines[x][l1+2:]
+            l1 = lines[x].find(" ")
+            xVals[n].append(lines[x][:l1])
+            lines[x]=lines[x][l1+1:]
+            l1 = lines[x].find(")")
+            if lines[x].find(" ")>l1:
+                yVals[n].append(lines[x][:lines[x].find(" ")])
+            else:
+                yVals[n].append(lines[x][:l1])
+            string +=lines[x]
+            if len(lines[x+1])<28 or not (lines[x+1][28:][0])=="5":
+                string =""
+                n+=1
+    length = []
+    width = []
+    area = []
+    lenNum = 0
+    for p in range(0,len(yVals)):
+        minValy = float(yVals[p][0])
+        maxValy = float(yVals[p][0])
+        for q in range(0,len(yVals[p])):
+            if  (float(yVals[p][q]))<minValy:
+                minValy = float(yVals[p][q])
+            if (float(yVals[p][q]))>maxValy:
+                maxValy = float(yVals[p][q])
+    for p in range(0,len(yVals)):
+        minValx = float(xVals[p][0])
+        maxValx = float(xVals[p][0])   
+        for q in range(0,len(yVals[p])):    
+            if (float(xVals[p][q]))<minValx:
+                minValx = float(xVals[p][q])
+            if (float(xVals[p][q]))>maxValx:
+                maxValx = float(xVals[p][q])
+        length.append(maxValy-minValy)
+        width.append(maxValx-minValx)
+        area.append(length[lenNum]*width[lenNum])
+        lenNum+=1
+    return area
+    
 def main():
 
     # Parse arguments
@@ -122,6 +180,9 @@ def main():
     
     pos_mat = get_components_pos_from_file(args.filename)
     print(pos_mat)
+    
+    area=get_area(args.filename)
+    print(area)
 
 if __name__ == "__main__":
     main()
