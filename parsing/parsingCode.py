@@ -107,9 +107,15 @@ def get_components_pos_from_file(filename):
 
 
 def get_area(filename):
+    lines =[]
+    outlines = []
+    xVals = []
+    yVals = []
     base_path = ""
     path_to_file = os.path.join(base_path, filename)
     fd = open(path_to_file, 'r')
+    for line in fd:
+        lines.append(line)
     string =""
     n=0
     for x in range(0,len(lines)-1):
