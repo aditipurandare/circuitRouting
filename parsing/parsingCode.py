@@ -90,18 +90,18 @@ def get_components_pos_from_file(filename):
             ne =0
             temp= temp[temp.find("place"):]
             temp= temp[temp.find(" "):]
-            for t in range(0,3):
+            for _ in range(0,3):
                 temp= temp[temp.find(" ")+1:]
                 ne = temp.find(" ")+1
                 l.append(temp[:ne])
-    for t in range(0,3):
+    for _ in range(0,3):
         del l[0]
     for p in range(0,int(len(l)/3)-1):
             locations.append([])
     for p in range(0,int(len(l)/3)):
         for q in range(0,3):
             locations[p].append(l[q])
-        for r in range(0,3):
+        for _ in range(0,3):
             del(l[0])
     return locations
 
