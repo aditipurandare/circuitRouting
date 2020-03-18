@@ -1,7 +1,14 @@
+import numpy as np
+
+# ==============================================================================
+# Helper Functions
+
 
 def get_pins_from_cell(cell):
+    """ Return the list of pins for the cell """
 
-    return None
+    # TODO
+    return ['empty']
 
 
 def get_pins_from_cells(cells):
@@ -9,25 +16,53 @@ def get_pins_from_cells(cells):
     return {get_pins_from_cell(c) for c in cells}
 
 
-def calculate_net_pins_WA(net, pins_locations):
+# ==============================================================================
+# Costs functions
 
-    return None
+def calculate_net_pins_WA(net, pins_locations):
+    """ Calculates the Weighted Average Wirelenght for the net and pins. """
+
+    # TODO
+    return float('inf')
 
 
 def calculate_net_WA(net, cell_locations):
+    """ 
+    Calculates the Weighted Average Wirelenght for the net and pins of cells. 
+    """
 
-    calculate_net_pins_WA(net,cell_locations)
+    return calculate_net_pins_WA(net, cell_locations)
 
-    return None
+
+def calculate_nets_WA(nets, cell_locations):
+    """ 
+    Calculates the Weighted Average Wirelenght for the net and pins of cells. 
+    """
+
+    return np.sum([calculate_net_WA(net, cell_locations) for net in nets])
 
 
 def calculate_density_penalty(cell_locations):
 
-    return None
+    # TODO
+    return float('inf')
+
+
+def calculate_cost(nets, cell_locations):
+    """
+    Merge results of WA cost with density penalty for the full design
+    """
+
+    with cell_locations as cls, nets as ns:
+        return calculate_nets_WA(ns, cls)+calculate_density_penalty(cls)
+
+# ==============================================================================
+# Optimization functions
 
 
 def optimize_WA(nets, cell_locations):
 
+    # TODO
     return None
 
 
