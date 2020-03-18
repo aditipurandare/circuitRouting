@@ -61,6 +61,7 @@ def calculate_cost(nets, cell_locations):
 
 
 def optimize_WA(nets, cell_locations):
+    """ Update cell_locations (Global Placement) based on gradient descent """
 
     # TODO
     return None
