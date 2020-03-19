@@ -1,6 +1,8 @@
 
 
 class Element:
+    """Base class for all the Modules, Pins, Nets etc."""
+
     def __init__(self, name):
         self.name = name
         self.element_type = None
@@ -13,6 +15,7 @@ class Element:
 
 
 class Pin(Element):
+    """Pin of a Module."""
 
     def __init__(self, name, x_offset=0, y_offset=0):
         Element.__init__(self, name)
@@ -22,6 +25,7 @@ class Pin(Element):
 
 
 class Module(Element):
+    """Module is a component that contains pins under its surface."""
 
     def __init__(self, name, x_pos=0, y_pos=0, width=10, height=10):
         Element.__init__(self, name)
@@ -32,7 +36,7 @@ class Module(Element):
         self.x_pos = x_pos
         self.y_pos = y_pos
 
-        # Every module has at least one pin 
+        # Every module has at least one pin
         self.pin_count = 0
         self.pins = []
         self.pins.append(Pin(self.name+"{:02d}".format(self.pin_count)))
@@ -40,12 +44,14 @@ class Module(Element):
 
 
 class Net(Element):
+    """Net connects pins together."""
 
     def __init__(self, name):
         Element.__init__(self, name)
 
 
 class Board(Element):
+    """Board is the enviroment with Modules and Nets."""
 
     # List of nets
     # List of Modules
