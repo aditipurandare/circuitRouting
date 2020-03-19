@@ -35,8 +35,8 @@ class Module(Element):
 
         self.x_pos = x_pos
         self.y_pos = y_pos
-        self.x_pos = x_pos
-        self.y_pos = y_pos
+        self.width = width
+        self.height = height
 
         # Every module has at least one pin
         self.pin_count = 0
@@ -58,5 +58,11 @@ class Board(Element):
     # List of nets
     # List of Modules
 
-    def __init__(self, name, x_size=0, y_size=0):
+    def __init__(self, name, width=0, height=0):
         Element.__init__(self, name)
+        
+        self.width = width
+        self.height = height
+
+        self.modules = []
+        self.nets = []
