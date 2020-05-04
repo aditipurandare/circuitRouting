@@ -1,6 +1,12 @@
 import pcbnew
 board = pcbnew.GetBoard()
 
+#outputs:
+#connections: final connection matrix
+#pad1:list of pads
+#padNetList: lost of pad networks
+#padNameNetList: pad name and network code(pad1+padNameNetList)
+
 #modules
 modList = board.GetModules()
 modListVals =[]
@@ -87,7 +93,6 @@ for x in range(1,len(modListVals)+1):
 #pad matrix              
 connections = []                 
 pads1 = []
-tempNums = []
 temp =0
 nums = 0
 for x in pads:
